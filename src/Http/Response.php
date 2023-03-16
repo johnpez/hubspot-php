@@ -62,6 +62,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->data->{$offset});
@@ -74,6 +75,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         $data = $this->toArray();
@@ -87,6 +89,7 @@ class Response implements ResponseInterface, ArrayAccess
      * @param mixed $offset
      * @param mixed $value
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->data->{$offset} = $value;
@@ -97,6 +100,7 @@ class Response implements ResponseInterface, ArrayAccess
      *
      * @param mixed $offset
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->data->{$offset});
